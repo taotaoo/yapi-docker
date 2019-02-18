@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [[ ! -d "/api/vendors" || -z `ls /api/vendors` ]];then
+        mkdir -p /api/vendors;
+        cp -r /home/package/* /api/vendors;
+        cd /api/vendors && npm install --production --registry https://registry.npm.taobao.org;
+fi
+
+$1

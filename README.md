@@ -28,7 +28,7 @@
 **2、启动 MongoDB**
 
 ```shell
-docker run -d --name mongo-yapi -v /opt/dilu/yapi/mongo:/data/db mongo
+docker run -d --name mongo-yapi -v /opt/yapi/mongo:/data/db mongo
 ```
 
 **3、初始化 Yapi 数据库索引及管理员账号**
@@ -43,7 +43,7 @@ docker run -it --rm   --link mongo-yapi:mongo   --workdir /api/vendors   xvwenta
 
 ```shell
 docker run -d \
-  -v /opt/dilu/yapi/yapi/:/api/vendors/ \
+  -v /opt/yapi/yapi/:/api/vendors/ \
   --name yapi \
   --link mongo-yapi:mongo \
   --workdir /api/vendors \
